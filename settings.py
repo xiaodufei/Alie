@@ -1,9 +1,14 @@
+import logging
+
 class Settings(object):
 
     """存储《外星人入侵》的所有设置的类"""
     def __init__(self):
 
         """初始化游戏的设置"""
+
+        self.debug_level = logging.DEBUG
+
         # 游戏窗口输出设置
         # 窗口尺寸
         self.screen_width = 700

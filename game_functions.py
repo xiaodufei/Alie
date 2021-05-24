@@ -12,28 +12,23 @@ def check_events():
             sys.exit()
 
 
-def update_screen(ai_settings, screen, alien):
+def update_screen(ai_settings, log, screen, alien):
     # 每次循环时都重绘屏幕
     screen.fill(ai_settings.bg_color)
 
     # 更新 Aliens
-    update_aliens(alien)
+    update_aliens(alien, log)
 
     # 让最近绘制的屏幕可见
     pygame.display.flip()
 
 
-def update_aliens(alien):
-
-    print(alien.check_edges())
+def update_aliens(alien, log):
 
     if alien.check_edges():
-        print('done')
         alien.change_direction()
 
-
-    print(f'{alien.rect.x} & { alien.rect.y}')
-
+    log.debug(f'x coordinate of alien: {alien.rect.x} | y coordinate of alien: { alien.rect.y}')
     alien.update_location()
 
     # 放到屏幕上
