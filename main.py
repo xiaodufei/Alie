@@ -29,6 +29,7 @@ def run_game():
 
 
 def test():
+
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
     alien_1 = Alien(ai_settings, screen)

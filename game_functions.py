@@ -25,13 +25,17 @@ def update_screen(ai_settings, log, screen, alien):
 
 def update_aliens(alien, log):
 
+    # 如果外星人位于屏幕边缘
     if alien.check_edges():
+        # 更改 外星人 y轴 的坐标; 更改 外星人 运动方向
         alien.change_direction()
 
-    log.debug(f'x coordinate of alien: {alien.rect.x} | y coordinate of alien: { alien.rect.y}')
+    # update x轴 坐标
     alien.update_location()
 
-    # 放到屏幕上
+    log.debug(f'x coordinate of alien: {alien.rect.x} | y coordinate of alien: {alien.rect.y}')
+
+    # 在指定位置(根据 x轴, y轴 坐标)绘制外星人
     alien.blitme()
 
 
