@@ -30,7 +30,7 @@ def update_aliens(alien, log):
         # 更改 外星人 y轴 的坐标; 更改 外星人 运动方向
         alien.change_direction()
 
-    # update x轴 坐标
+    # 更改 x轴 坐标
     alien.update_location()
 
     log.debug(f'x coordinate of alien: {alien.rect.x} | y coordinate of alien: {alien.rect.y}')
